@@ -12,7 +12,7 @@ State the version, licence and author
 
 Begin with a comment-block which will be preserved after compilation. 
 
-    ###! Chee 0.0.3 // MIT licence // chee.richplastow.com // Rich Plastow //###
+    ###! Chee 0.0.4 // MIT licence // chee.richplastow.com // Rich Plastow //###
 
 
 
@@ -28,13 +28,29 @@ The `constructor()` of each `Chee` instance records its index as `@i`:
     chees = []
 
 
-#### `integerTest`, @todo more
+#### `*Test`
 These objects can be used as the fourth element of a `rule`, before being 
 passed to `validate()`. 
 
     integerTest =
-      toString: -> 'integer test'
-      test: (v) -> 0 == v % 1
+      toString: -> 'the integer test'
+      test: (v) -> 0 == v % 1 and Infinity != v and -Infinity != v 
+
+    naturalTest =
+      toString: -> 'the natural-number test'
+      test: (v) -> 0 == v % 1 and Infinity != v and -Infinity != v and v > 0
+
+    wholeTest =
+      toString: -> 'the whole-number test'
+      test: (v) -> 0 == v % 1 and Infinity != v and -Infinity != v and v >= 0
+
+    lowNaturalTest =
+      toString: -> 'the low-natural-number test'
+      test: (v) -> 100 > v > -100 and naturalTest.test v
+
+    lowWholeTest =
+      toString: -> 'the low-whole-number test'
+      test: (v) -> 100 > v > -100 and wholeTest.test v
 
 
 
@@ -74,8 +90,7 @@ elements:
 - `key  <string> ` Specifies the key to be tested
 - `mand <boolean>` Whether the key is mandatory
 - `type <string> ` The expected result when `toType()` is called on the value
-- `test <regexp> ` Regular expression to test the value (converted to a string) 
-against. Alternatively, an object like `integerTest` can be used. 
+- `test <regexp> ` An object with a `test()` function (see `integerTest`, above)
 
       errors = []
       for rule in rules

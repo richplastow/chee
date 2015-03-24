@@ -20,9 +20,14 @@ Define valid `opt` @todo is this the best place for these rules?
 ------------------
 
       rules =
-        opt: [
-          [ 'x', 0, 'number', integerTest ]
-        ]
+        opt: []
+
+      for key in ['x', 'y', 'z']
+        rules.opt.push [ key, 0, 'number', lowWholeTest ]
+
+      for key in ['w', 'h', 'd']
+        rules.opt.push [ key, 0, 'number', lowNaturalTest ]
+
 
 
 

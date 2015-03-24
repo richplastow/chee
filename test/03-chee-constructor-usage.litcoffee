@@ -70,12 +70,12 @@ Run passing unit tests on the `Chee` constructor.
     test.equal [
 
       "Set the position during instantiation"
-      21
-      -> c = new Chee({ x:5, y:7, z:9 }); c.x + c.y + c.z
+      14
+      -> c = new Chee({ x:5, y:0, z:9.0 }); c.x + c.y + c.z
 
       "Set the size during instantiation"
       14
-      -> c = new Chee({ w:2, h:4, d:8 }); c.w + c.h + c.d
+      -> c = new Chee({ w:2, h:4, d:8.0 }); c.w + c.h + c.d
 
       "Instantiate with some position/size defaults"
       8

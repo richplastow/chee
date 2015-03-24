@@ -112,7 +112,7 @@ Format a typical fail message.
 Convert to string, and reveal invisible characters. @todo not just space
 
       invisibles = (value) ->
-        value.toString().replace /^\s+|\s+$/g, (match) ->
+        value?.toString().replace /^\s+|\s+$/g, (match) ->
           '\u00b7' + (new Array match.length).join '\u00b7'
 
 

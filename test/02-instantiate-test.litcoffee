@@ -6,10 +6,10 @@ Create an instance of `DoTest`, to add tests to.
     test = new DoTest
 
 
-Expose the `DoTest` instance’s `do()` method as a property of `Chee`. This will 
-allow tests to be run using `Chee.doTest()`. 
+Allow the `DoTest` instance’s `do()` method to be accessed from anywhere.  
+@todo export for NodeJS, RequireJS etc
 
-    Chee.doTest = test.do
+    window.doTest = test.do
 
 
 

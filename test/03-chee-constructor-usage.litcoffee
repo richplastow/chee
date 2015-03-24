@@ -4,7 +4,7 @@
 Run passing unit tests on the `Chee` constructor. 
 
 
-    test.section "`Chee` Constructor Usage, No `opt` argument"
+    test.section "`Chee` Constructor Usage, No `opt` Argument"
 
     test.is [
 

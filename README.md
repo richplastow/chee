@@ -1,4 +1,4 @@
-Chee 0.0.2
+Chee 0.0.3
 ==========
 
 The basic set of ‘Compact Hot-Edge Element’ classes, written in Literate 
